@@ -1,0 +1,26 @@
+{
+    "name": "jiaxincui/hashid",
+    "type": "library",
+    "description": "Laravel ID Encrypt Helper",
+    "keywords": ["laravel", "encrypt", "helper", "hashid"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jiaxin Cui",
+            "email": "jenkincei@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "hashids/hashids": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jiaxincui\\Hashid\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "stable"
+}

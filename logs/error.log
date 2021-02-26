@@ -8,3 +8,12 @@
 2021/02/26 05:37:47 [error] 21#21: *7 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.23.0.1, server: localhost, request: "GET /vip/user/test22 HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "localhost"
 2021/02/26 05:37:49 [error] 21#21: *7 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.23.0.1, server: localhost, request: "GET /vip/user/test22 HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "localhost"
 2021/02/26 05:37:51 [error] 21#21: *7 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.23.0.1, server: localhost, request: "GET /vip/user/test22 HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "localhost"
+2021/02/26 07:56:24 [error] 23#23: *10 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught ErrorException: require(/web/anta/routes/api.php): failed to open stream: No such file or directory in /web/anta/vendor/laravel/framework/src/Illuminate/Routing/Router.php:327
+Stack trace:
+#0 /web/anta/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/web/an...', '/web/anta/vendo...', 327, Array)
+#1 /web/anta/vendor/laravel/framework/src/Illuminate/Routing/Router.php(327): require()
+#2 /web/anta/vendor/laravel/framework/src/Illuminate/Routing/Router.php(283): Illuminate\Routing\Router->loadRoutes('/web/anta/route...')
+#3 /web/anta/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, '/web/anta/route...')
+#4 /web/anta/app/Providers/RouteServiceProvider.php(74): Illuminate\Routing\RouteRegistrar->group('/web/anta/route...')
+#5 /web/anta/app/Providers/RouteServiceProvider.php(38): App\Providers\RouteServiceProvider->mapApiRou...
+PHP message: PHP Fatal error:  Illuminate\Routing\Router::loadRoutes(): Failed opening required '/web/anta/routes/api.php' (include_path='.:/usr/share/php') in /web/anta/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 327" while reading response header from upstream, client: 172.23.0.1, server: localhost, request: "GET /vip/user/test22 HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "localhost"
