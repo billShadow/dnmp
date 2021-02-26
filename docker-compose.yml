@@ -1,0 +1,35 @@
+version: "3"
+services:
+  nginx:
+    image: nginx
+    privileged: true
+    container_name: nginx
+    depends_on:
+      - php
+    ports: 
+      - "80:80"
+    volumes: 
+      - /Users/bill/docker/lnmp2/web:/usr/share/nginx/html
+      - /Users/bill/docker/lnmp2/conf:/etc/nginx/conf.d
+      - /Users/bill/docker/lnmp2/logs:/var/log/nginx
+    networks:
+      - test
+  php:
+    image: phpdockerio/php72-fpm
+    container_name: php
+    privileged: true
+    volumes:
+      - /Users/bill/docker/lnmp2/web:/web
+    networks:
+      - test
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - test
+networks: 
+  test:
